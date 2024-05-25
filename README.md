@@ -10,9 +10,13 @@ Node: `v20.13.1`
 
 `npm run dev`
 
-## Test 
+## Unit test
 
 `npm run test`
+
+## E2E test
+
+`npm run test:e2e`
 
 ## Serve prod build
 
