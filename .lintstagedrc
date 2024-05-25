@@ -1,3 +1,4 @@
 {
-  "**/*": "prettier --write --ignore-unknown"
+  "**/*": "npm run prettier",
+  "*.{ts,tsx}": "npm run lint"
 }
