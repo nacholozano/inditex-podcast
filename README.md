@@ -20,6 +20,6 @@ Node: `v20.13.1`
 
 ## Serve prod build
 
-`npm run build`  
+`npm run build`
 
 `npm run preview`
