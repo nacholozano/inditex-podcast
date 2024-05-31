@@ -11,8 +11,12 @@ const PodcastCard: FC<Props> = ({ img, alt, title, author }) => {
           <img src={img} className={styles.img} alt={alt} />
         </div>
         <div className={styles.infoContainer}>
-          <div className={styles.title}>{title}</div>
-          <div className={styles.author}>Author: {author}</div>
+          <div className={styles.title} data-testid="title">
+            {title}
+          </div>
+          <div className={styles.author} data-testid="author">
+            Author: {author}
+          </div>
         </div>
       </div>
     </Card>
