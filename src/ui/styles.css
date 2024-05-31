@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'Arial';
+  src: url('assets/ARIAL.woff');
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial';
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
