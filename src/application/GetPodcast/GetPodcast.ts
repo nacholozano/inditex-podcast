@@ -27,7 +27,7 @@ const getPodcast =
     } = podcast
 
     return new Podcast({
-      id: trackId,
+      id: String(trackId),
       img: artworkUrl600,
       name: trackName,
       author: artistName,

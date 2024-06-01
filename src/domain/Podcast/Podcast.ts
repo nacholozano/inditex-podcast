@@ -1,7 +1,7 @@
 import { Episode } from 'domain/Episode/Episode'
 
 type Props = {
-  id?: number
+  id?: string
   name?: string
   author?: string
   img?: string
@@ -11,7 +11,7 @@ type Props = {
 }
 
 class Podcast {
-  private _id: number
+  private _id: string
   private _name: string
   private _author: string
   private _img: string
@@ -29,7 +29,7 @@ class Podcast {
     this._episodes = episodes || []
   }
 
-  public get id(): number {
+  public get id(): string {
     return this._id
   }
 
