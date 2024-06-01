@@ -1,7 +1,9 @@
+import { TableItemValue } from 'ui/components/Table/types'
+
 export type Episode = {
-  name: { value: string; path?: string }
-  date: { value: string }
-  duration: { value: string }
+  name: TableItemValue
+  date: TableItemValue
+  duration: TableItemValue
 }
 
 export type Props = {

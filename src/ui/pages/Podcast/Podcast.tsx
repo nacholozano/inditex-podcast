@@ -1,44 +1,15 @@
-import { FC, useContext, useEffect, useState } from 'react'
-import { Route, Routes, useParams } from 'react-router-dom'
-import Application from 'application'
-import { Podcast as PodcastClass } from 'domain/Podcast/Podcast'
+import { FC } from 'react'
+import { Route, Routes } from 'react-router-dom'
 import PodcastDetailCard from 'ui/components/PodcastDetailCard/PodcastDetailCard'
-import LoadingContext from 'ui/contexts/loading/loading'
 import EpisodesList from './EpisodesList/EpisodesList'
+import usePodcast from './usePodcast'
+import useEpisodes from './useEpisodes'
 import styles from './styles.module.css'
+import EpisodeListen from './EpisodeListen/EpisodeListen'
 
 const Podcast: FC = () => {
-  const { setLoading } = useContext(LoadingContext)
-  const { podcastId } = useParams()
-  const [podcast, setPodcast] = useState<PodcastClass>(new PodcastClass({}))
-  const [episodes, setEpisodes] = useState([])
-
-  console.log({ podcastId })
-
-  useEffect(() => {
-    setLoading(true)
-
-    const getPodcast = async () => {
-      const podcast = await Application.getPodcast({ id: podcastId })
-
-      console.log({ podcast })
-
-      const parsedEpisodes = podcast.episodes.map((episode) => {
-        return {
-          name: episode.title,
-          date: episode.date,
-          duration: episode.duration,
-          /* path: episode.id */
-        }
-      })
-
-      setPodcast(podcast)
-      setEpisodes(parsedEpisodes)
-      setLoading(false)
-    }
-
-    getPodcast()
-  }, [podcastId, setLoading])
+  const { podcast } = usePodcast()
+  const { episodes } = useEpisodes({ podcast })
 
   return (
     <div className={styles.wrapper}>
@@ -54,6 +25,7 @@ const Podcast: FC = () => {
         </div>
         <div className={styles.content}>
           <Routes>
+            <Route path="episode/:episodeId" element={<EpisodeListen />} />
             <Route
               path="/"
               element={

@@ -1,10 +1,10 @@
 type Props = {
-  id: number
-  title: string
-  date: string
-  duration: number
-  description: string
-  audio: string
+  id?: number
+  title?: string
+  date?: string
+  duration?: number
+  description?: string
+  audio?: string
 }
 
 class Episode {

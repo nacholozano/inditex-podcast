@@ -15,7 +15,7 @@ function App() {
         <BrowserRouter>
           <Header title="Podcaster" loading={loading} path="/" />
           <Routes>
-            <Route path="/podcast/:podcastId" Component={Podcast}></Route>
+            <Route path="/podcast/:podcastId/*" Component={Podcast}></Route>
             <Route path="/" Component={Home}></Route>
           </Routes>
         </BrowserRouter>

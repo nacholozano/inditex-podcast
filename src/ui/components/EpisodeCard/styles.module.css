@@ -1,0 +1,26 @@
+.container {
+  padding: 20px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.desc {
+  font-style: italic;
+  margin: 16px 0;
+}
+
+.sponsors {
+  font-style: italic;
+  padding-bottom: 25px;
+}
+
+.audioContainer {
+  padding-top: 20px;
+}
+
+.audio {
+  width: 100%;
+}
