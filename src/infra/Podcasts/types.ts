@@ -4,7 +4,7 @@ export enum PodcastListImgSize {
   big = '170',
 }
 
-type PodcastList = {
+export type PodcastList = {
   id: {
     attributes: {
       'im:id': string

@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import Application from 'application'
-import { Podcast } from 'domain/Podcast'
+import { Podcast } from 'domain/Podcasts/Podcast'
 import LoadingContext from 'ui/contexts/loading/loading'
 
 const usePodcastsList = () => {

@@ -1,4 +1,4 @@
-import { Podcast } from 'domain/Podcast'
+import { Podcast } from 'domain/Podcasts/Podcast'
 import { PodcastListImgSize } from 'infra/Podcasts/types'
 import { PodcastsService } from 'infra/Podcasts/Podcasts.service'
 
