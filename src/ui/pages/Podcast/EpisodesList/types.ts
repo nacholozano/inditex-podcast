@@ -1,8 +1,7 @@
 export type Episode = {
-  name: string
-  date: string
-  duration: string
-  path: string
+  name: { value: string; path?: string }
+  date: { value: string }
+  duration: { value: string }
 }
 
 export type Props = {

@@ -24,10 +24,12 @@ const Table: FC<Props> = ({ headers, data }) => {
               {headers.map((header) => {
                 return (
                   <td className={styles.bodyCell} align={header.align}>
-                    {item.path ? (
-                      <Link to={item.path}>{item[header.key]}</Link>
+                    {item[header.key].path ? (
+                      <Link to={item[header.key].path}>
+                        {item[header.key].value}
+                      </Link>
                     ) : (
-                      item[header.key]
+                      item[header.key].value
                     )}
                   </td>
                 )

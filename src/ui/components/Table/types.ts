@@ -1,7 +1,6 @@
-export type Item = {
-  /* id: string */
-  path?: string
-} & Record<string, string>
+export type TableItemValue = { value: string } & { path?: string }
+
+export type TableItem = Record<string, TableItemValue>
 
 export type Props = {
   headers: {
@@ -10,5 +9,5 @@ export type Props = {
     name: string
     align?: 'left' | 'right' | 'center'
   }[]
-  data: Item[]
+  data: TableItem[]
 }
