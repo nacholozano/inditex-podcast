@@ -6,9 +6,16 @@ import { RawPodcast } from 'infra/Podcast/types'
 const getPodcast =
   (podcastService: PodcastService) =>
   async ({ id }: { id: string }): Promise<Podcast> => {
-    const rawPodcast = await podcastService.getPodcast({ id })
+    const expiredData = podcastService.hasCachedPodcastsExpired({ id })
 
-    console.log({ rawPodcast })
+    let rawPodcast
+
+    if (expiredData) {
+      rawPodcast = await podcastService.getPodcast({ id })
+      podcastService.setCachedPodcast({ id, data: rawPodcast })
+    } else {
+      rawPodcast = podcastService.getCachedPodcast({ id })
+    }
 
     const podcast: RawPodcast = rawPodcast.results.find(
       (item) => item.wrapperType === 'track'

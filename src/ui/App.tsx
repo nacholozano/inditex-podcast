@@ -12,8 +12,8 @@ function App() {
   return (
     <>
       <LoadingContext.Provider value={{ loading, setLoading }}>
-        <Header title="Podcaster" loading={loading} />
         <BrowserRouter>
+          <Header title="Podcaster" loading={loading} path="/" />
           <Routes>
             <Route path="/podcast/:podcastId" Component={Podcast}></Route>
             <Route path="/" Component={Home}></Route>
