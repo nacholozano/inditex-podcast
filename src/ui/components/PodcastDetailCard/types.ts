@@ -3,5 +3,5 @@ export type Props = {
   alt: string
   title: string
   author: string
-  path: string
+  description: string
 }

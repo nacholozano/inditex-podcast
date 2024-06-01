@@ -1,0 +1,38 @@
+.container {
+  padding: 20px 15px;
+}
+
+.imgContainer {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.img {
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.infoContainer {
+  padding: 20px 10px;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.author {
+  font-style: italic;
+}
+
+.descContainer {
+  padding: 20px 0 0;
+}
+
+.descTitle {
+  font-weight: 600;
+}
+
+.desc {
+  font-style: italic;
+  margin: 8px 0 0;
+}

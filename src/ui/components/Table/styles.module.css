@@ -1,0 +1,12 @@
+.row:nth-child(odd) {
+  background-color: lightgray;
+}
+
+.headCell {
+  text-align: left;
+  padding: 8px;
+}
+
+.bodyCell {
+  padding: 8px;
+}

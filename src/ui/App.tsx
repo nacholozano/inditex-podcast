@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Application from 'application'
 import Header from 'ui/components/Header/Header'
 import LoadingContext from './contexts/loading/loading'
 import Home from './pages/Home/Home'
+import Podcast from './pages/Podcast/Podcast'
 import 'ui/styles.css'
 
 function App() {
@@ -15,11 +15,8 @@ function App() {
         <Header title="Podcaster" loading={loading} />
         <BrowserRouter>
           <Routes>
-            <Route
-              path="/"
-              Component={Home}
-              loader={() => Application.getPodcastsList()}
-            ></Route>
+            <Route path="/podcast/:podcastId" Component={Podcast}></Route>
+            <Route path="/" Component={Home}></Route>
           </Routes>
         </BrowserRouter>
       </LoadingContext.Provider>

@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react'
-import { Podcast } from 'domain/Podcast'
+import { Podcast } from 'domain/Podcast/Podcast'
 import PodcastCard from 'ui/components/PodcastCard/PodcastCard'
 import usePodcastsList from './usePodcastsList'
 import usePodcastsFilter from './usePodcastsFilter'
@@ -34,6 +34,7 @@ const Home: FC = () => {
                   alt={item.name}
                   title={item.name}
                   author={item.author}
+                  path={`podcast/${item.id}`}
                 />
               </li>
             )
