@@ -6,7 +6,7 @@ import styles from './styles.module.css'
 
 const PodcastCard: FC<Props> = ({ img, alt, title, author, path }) => {
   return (
-    <Link to={path}>
+    <Link to={path} className={styles.link}>
       <Card>
         <div className={styles.container}>
           <div className={styles.imgContainer}>

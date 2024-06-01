@@ -8,6 +8,7 @@ export type Props = {
     code: string
     key: string
     name: string
+    align?: 'left' | 'right' | 'center'
   }[]
   data: Item[]
 }

@@ -31,3 +31,8 @@
 .author {
   color: grey;
 }
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}

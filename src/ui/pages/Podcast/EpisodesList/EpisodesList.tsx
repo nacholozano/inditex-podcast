@@ -16,7 +16,12 @@ const EpisodesList: FC<Props> = ({ count, episodes }) => {
             headers={[
               { code: 'title', key: 'name', name: 'Title' },
               { code: 'date', key: 'date', name: 'Date' },
-              { code: 'duration', key: 'duration', name: 'Duration' },
+              {
+                code: 'duration',
+                key: 'duration',
+                name: 'Duration',
+                align: 'right',
+              },
             ]}
             data={episodes}
           />

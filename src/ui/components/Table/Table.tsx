@@ -9,7 +9,11 @@ const Table: FC<Props> = ({ headers, data }) => {
       <thead>
         <tr>
           {headers.map((header) => {
-            return <th className={styles.headCell}>{header.name}</th>
+            return (
+              <th className={styles.headCell} align={header.align}>
+                {header.name}
+              </th>
+            )
           })}
         </tr>
       </thead>
@@ -19,7 +23,7 @@ const Table: FC<Props> = ({ headers, data }) => {
             <tr className={styles.row}>
               {headers.map((header) => {
                 return (
-                  <td className={styles.bodyCell}>
+                  <td className={styles.bodyCell} align={header.align}>
                     {item.path ? (
                       <Link to={item.path}>{item[header.key]}</Link>
                     ) : (

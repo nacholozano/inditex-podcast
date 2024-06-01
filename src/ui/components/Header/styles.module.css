@@ -2,12 +2,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid black;
   padding: 20px;
 }
 
 .title {
   margin: 0;
+}
+
+.title a {
+  color: var(--main-blue);
+  text-decoration: none;
 }
 
 @keyframes loading {
@@ -26,7 +30,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: blue;
+  background-color: var(--main-blue);
   animation-name: loading;
   animation-duration: 1.25s;
   animation-iteration-count: infinite;

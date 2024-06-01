@@ -25,7 +25,7 @@
 
 .counter {
   display: inline-block;
-  background-color: blue;
+  background-color: var(--main-blue);
   color: white;
   border-radius: 12px;
   padding: 4px;

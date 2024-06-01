@@ -1,22 +1,28 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
+import Card from 'ui/components/Card/Card'
 import { Props } from './types'
 import styles from './styles.module.css'
 
 const Header: FC<Props> = ({ title, loading, path }) => {
   return (
-    <header className={styles.container}>
-      <div>
-        <h1 className={styles.title} data-testid="title">
-          <Link to={path}>{title}</Link>
-        </h1>
-      </div>
-      {loading && (
+    <Card>
+      <header className={styles.container}>
         <div>
-          <div className={styles.loadingIndicator} data-testid="loading"></div>
+          <h1 className={styles.title} data-testid="title">
+            <Link to={path}>{title}</Link>
+          </h1>
         </div>
-      )}
-    </header>
+        {loading && (
+          <div>
+            <div
+              className={styles.loadingIndicator}
+              data-testid="loading"
+            ></div>
+          </div>
+        )}
+      </header>
+    </Card>
   )
 }
 
