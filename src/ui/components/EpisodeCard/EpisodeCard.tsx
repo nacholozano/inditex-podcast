@@ -8,7 +8,12 @@ const EpisodeCard = ({ title, desc, sponsors, audio }: Props) => {
     <Card>
       <div className={styles.container}>
         <div className={styles.title}>{title}</div>
-        <p className={styles.desc}>{desc}</p>
+        <p
+          className={styles.desc}
+          dangerouslySetInnerHTML={{
+            __html: desc,
+          }}
+        ></p>
         <div className={styles.sponsors}>
           This episode is sponsored by{' '}
           {sponsors.map((item, index) => {

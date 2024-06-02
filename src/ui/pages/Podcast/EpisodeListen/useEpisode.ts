@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import DOMPurify from 'dompurify'
 import Application from 'application'
 import { Episode } from 'domain/Episode/Episode'
 
@@ -11,7 +12,16 @@ const useEpisode = () => {
     const loadEpisode = async () => {
       const episode = await Application.getEpisode({ podcastId, episodeId })
 
-      setEpisode(episode)
+      const { id, title, audio, description } = episode
+
+      const episodeSanitized = new Episode({
+        id,
+        title,
+        audio,
+        description: DOMPurify.sanitize(description),
+      })
+
+      setEpisode(episodeSanitized)
     }
 
     loadEpisode()
