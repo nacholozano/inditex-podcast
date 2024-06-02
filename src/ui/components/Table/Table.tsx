@@ -5,7 +5,7 @@ import styles from './styles.module.css'
 
 const Table: FC<Props> = ({ headers, data }) => {
   return (
-    <table>
+    <table className={styles.table}>
       <thead>
         <tr>
           {headers.map((header) => {
@@ -25,7 +25,7 @@ const Table: FC<Props> = ({ headers, data }) => {
                 return (
                   <td className={styles.bodyCell} align={header.align}>
                     {item[header.key].path ? (
-                      <Link to={item[header.key].path}>
+                      <Link to={item[header.key].path} className={styles.link}>
                         {item[header.key].value}
                       </Link>
                     ) : (

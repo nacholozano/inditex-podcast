@@ -1,5 +1,5 @@
 .row:nth-child(odd) {
-  background-color: lightgray;
+  background-color: #ebebeb;
 }
 
 .headCell {
@@ -8,5 +8,29 @@
 }
 
 .bodyCell {
-  padding: 8px;
+  padding: 12px 8px;
+}
+
+.link {
+  color: var(--main-blue);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:visited {
+  color: darkblue;
+}
+
+.table,
+.table tr,
+.table tr {
+  border-collapse: collapse;
+  border: none;
+}
+
+.table tbody tr {
+  border-top: 1px solid lightgray;
 }
