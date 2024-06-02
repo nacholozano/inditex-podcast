@@ -10,7 +10,9 @@ const getPodcastsList =
 
     if (expiredData) {
       rawData = await podcastsService.getPodcasts()
-      podcastsService.setCachedPodcasts(rawData)
+      if (rawData) {
+        podcastsService.setCachedPodcasts(rawData)
+      }
     } else {
       rawData = podcastsService.getCachedPodcasts()
     }
