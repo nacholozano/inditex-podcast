@@ -43,7 +43,7 @@ const getPodcast =
       episodes: episodes.map(
         (episode) =>
           new Episode({
-            id: episode.trackId,
+            id: String(episode.trackId),
             title: episode.trackName,
             date: episode.releaseDate,
             duration: episode.trackTimeMillis,

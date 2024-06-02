@@ -23,7 +23,7 @@ const getEpisode =
     const { trackId, trackName, episodeUrl, description } = episode
 
     return new Episode({
-      id: trackId,
+      id: String(trackId),
       title: trackName,
       audio: episodeUrl,
       description: description,
