@@ -8,7 +8,9 @@ import styles from './styles.module.css'
 const Home: FC = () => {
   const [data, setData] = useState<Podcast[]>([])
   const { podcastsList } = usePodcastsList()
-  const { listedData, handleInputChange } = usePodcastsFilter({ data })
+  const { termValue, listedData, handleInputChange } = usePodcastsFilter({
+    data,
+  })
 
   useEffect(() => {
     setData(podcastsList)
@@ -22,6 +24,7 @@ const Home: FC = () => {
           className={styles.input}
           placeholder="Filter podcasts..."
           onChange={handleInputChange}
+          defaultValue={termValue}
         />
       </div>
       <ul className={styles.podcastList}>
