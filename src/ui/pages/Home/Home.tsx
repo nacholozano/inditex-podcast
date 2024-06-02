@@ -1,30 +1,27 @@
-import { FC, useEffect, useState } from 'react'
-import { Podcast } from 'domain/Podcast/Podcast'
+import { FC } from 'react'
 import PodcastCard from 'ui/components/PodcastCard/PodcastCard'
 import usePodcastsList from './usePodcastsList'
 import usePodcastsFilter from './usePodcastsFilter'
 import styles from './styles.module.css'
 
 const Home: FC = () => {
-  const [data, setData] = useState<Podcast[]>([])
-  const { podcastsList } = usePodcastsList()
+  const { loading, podcastsList } = usePodcastsList()
   const { termValue, listedData, handleInputChange } = usePodcastsFilter({
-    data,
+    data: podcastsList,
   })
-
-  useEffect(() => {
-    setData(podcastsList)
-  }, [podcastsList])
 
   return (
     <div className={styles.container}>
       <div className={styles.filter}>
-        <span className={styles.counter}>{listedData.length}</span>
+        <span className={styles.counter}>
+          {loading ? 0 : listedData.length}
+        </span>
         <input
           className={styles.input}
           placeholder="Filter podcasts..."
           onChange={handleInputChange}
           defaultValue={termValue}
+          disabled={loading}
         />
       </div>
       <ul className={styles.podcastList}>
@@ -36,7 +33,7 @@ const Home: FC = () => {
                 alt={item.name}
                 title={item.name}
                 author={item.author}
-                path={`podcast/${item.id}`}
+                path={loading ? '' : `podcast/${item.id}`}
               />
             </li>
           )
