@@ -16,6 +16,8 @@ Node: `v20.13.1`
 
 ## E2E test
 
+`npx playwright install`
+
 `npm run test:e2e`
 
 ## Serve prod build
