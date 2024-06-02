@@ -12,31 +12,26 @@ const Podcast: FC = () => {
   const { episodes } = useEpisodes({ podcast })
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.container}>
-        <div className={styles.podcastCard}>
-          <PodcastDetailCard
-            title={podcast.name}
-            author={podcast.author}
-            description={''}
-            img={podcast.img}
-            alt={podcast.name}
+    <div className={styles.container}>
+      <div className={styles.podcastCard}>
+        <PodcastDetailCard
+          title={podcast.name}
+          author={podcast.author}
+          description={''}
+          img={podcast.img}
+          alt={podcast.name}
+        />
+      </div>
+      <div className={styles.content}>
+        <Routes>
+          <Route path="episode/:episodeId" element={<EpisodeListen />} />
+          <Route
+            path="/"
+            element={
+              <EpisodesList count={podcast.totalEpisode} episodes={episodes} />
+            }
           />
-        </div>
-        <div className={styles.content}>
-          <Routes>
-            <Route path="episode/:episodeId" element={<EpisodeListen />} />
-            <Route
-              path="/"
-              element={
-                <EpisodesList
-                  count={podcast.totalEpisode}
-                  episodes={episodes}
-                />
-              }
-            />
-          </Routes>
-        </div>
+        </Routes>
       </div>
     </div>
   )

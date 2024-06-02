@@ -1,11 +1,6 @@
 .container {
   display: flex;
   gap: 70px;
-}
-
-.wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
   padding: 40px 0 80px;
 }
 

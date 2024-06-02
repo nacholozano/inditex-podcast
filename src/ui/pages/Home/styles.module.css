@@ -2,11 +2,6 @@
   padding-bottom: 90px;
 }
 
-.wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
 .filter {
   padding: 40px 0 80px;
   display: flex;

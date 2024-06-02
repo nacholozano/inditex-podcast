@@ -15,33 +15,31 @@ const Home: FC = () => {
   }, [podcastsList])
 
   return (
-    <main className={styles.container}>
-      <div className={styles.wrapper}>
-        <div className={styles.filter}>
-          <span className={styles.counter}>{listedData.length}</span>
-          <input
-            className={styles.input}
-            placeholder="Filter podcasts..."
-            onChange={handleInputChange}
-          />
-        </div>
-        <ul className={styles.podcastList}>
-          {listedData.map((item) => {
-            return (
-              <li key={item.id}>
-                <PodcastCard
-                  img={item.img}
-                  alt={item.name}
-                  title={item.name}
-                  author={item.author}
-                  path={`podcast/${item.id}`}
-                />
-              </li>
-            )
-          })}
-        </ul>
+    <div className={styles.container}>
+      <div className={styles.filter}>
+        <span className={styles.counter}>{listedData.length}</span>
+        <input
+          className={styles.input}
+          placeholder="Filter podcasts..."
+          onChange={handleInputChange}
+        />
       </div>
-    </main>
+      <ul className={styles.podcastList}>
+        {listedData.map((item) => {
+          return (
+            <li key={item.id}>
+              <PodcastCard
+                img={item.img}
+                alt={item.name}
+                title={item.name}
+                author={item.author}
+                path={`podcast/${item.id}`}
+              />
+            </li>
+          )
+        })}
+      </ul>
+    </div>
   )
 }
 
