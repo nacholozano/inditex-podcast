@@ -3,12 +3,21 @@ import { useParams } from 'react-router-dom'
 import Application from 'application'
 import LoadingContext from 'ui/contexts/loading/loading'
 import { Podcast as PodcastClass } from 'domain/Podcast/Podcast'
+import PodcastPlaceholderImg from 'ui/assets/speaker.svg'
 
 const usePodcast = () => {
   const { setLoading } = useContext(LoadingContext)
   const { podcastId } = useParams()
 
-  const [podcast, setPodcast] = useState<PodcastClass>(new PodcastClass({}))
+  // Placeholder podcast
+  const [podcast, setPodcast] = useState<PodcastClass>(
+    new PodcastClass({
+      img: PodcastPlaceholderImg,
+      name: '- - -',
+      author: '...',
+      episodes: [],
+    })
+  )
 
   useEffect(() => {
     setLoading(true)

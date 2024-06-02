@@ -15,12 +15,13 @@ const EpisodesList: FC<Props> = ({ count, episodes }) => {
           <Table
             headers={[
               { code: 'title', key: 'name', name: 'Title' },
-              { code: 'date', key: 'date', name: 'Date' },
+              { code: 'date', key: 'date', name: 'Date', oneLine: true },
               {
                 code: 'duration',
                 key: 'duration',
                 name: 'Duration',
                 align: 'right',
+                oneLine: true,
               },
             ]}
             data={episodes}

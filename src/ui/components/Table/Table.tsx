@@ -24,11 +24,13 @@ const Table: FC<Props> = ({ headers, data }) => {
       <tbody>
         {data.map((item) => {
           return (
-            <tr className={styles.row} key={item.id}>
+            <tr className={styles.row} key={item.id.value}>
               {headers.map((header) => {
+                const tdClasses = `${styles.bodyCell} ${header.oneLine ? styles.oneLine : ''}`
+
                 return (
                   <td
-                    className={styles.bodyCell}
+                    className={tdClasses}
                     align={header.align}
                     key={`${item.id}-${header.code}`}
                   >

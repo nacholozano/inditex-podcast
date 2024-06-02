@@ -1,5 +1,5 @@
 type Props = {
-  id?: number
+  id?: string
   title?: string
   date?: string
   duration?: number
@@ -8,7 +8,7 @@ type Props = {
 }
 
 class Episode {
-  private _id: number
+  private _id: string
   private _title: string
   private _date: string
   private _duration: number
@@ -24,7 +24,7 @@ class Episode {
     this._audio = audio || ''
   }
 
-  public get id(): number {
+  public get id(): string {
     return this._id
   }
 

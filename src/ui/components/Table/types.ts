@@ -1,6 +1,6 @@
-export type TableItemValue = { value: string } & { path?: string }
+export type TableItemValue = { value: string; path?: string }
 
-export type TableItem = Record<string, TableItemValue> & { id: string }
+export type TableItem = { id: TableItemValue } & Record<string, TableItemValue>
 
 export type Props = {
   headers: {
@@ -8,6 +8,7 @@ export type Props = {
     key: string
     name: string
     align?: 'left' | 'right' | 'center'
+    oneLine?: boolean
   }[]
   data: TableItem[]
 }

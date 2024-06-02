@@ -35,3 +35,7 @@
 .table tbody tr {
   border-top: 1px solid lightgray;
 }
+
+.oneLine {
+  white-space: nowrap;
+}

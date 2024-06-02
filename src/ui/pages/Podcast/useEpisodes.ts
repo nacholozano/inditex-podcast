@@ -2,9 +2,23 @@ import { useEffect, useState } from 'react'
 import { Podcast } from 'domain/Podcast/Podcast'
 
 const useEpisodes = ({ podcast }: { podcast: Podcast }) => {
-  const [episodes, setEpisodes] = useState([])
+  // Placeholder episodes list
+  const [episodes, setEpisodes] = useState(
+    Array(9)
+      .fill(null)
+      .map((_, index) => ({
+        name: { value: '- - -', path: '' },
+        date: { value: '--/--/----' },
+        duration: { value: '--:--' },
+        id: { value: String(index) },
+      }))
+  )
 
   useEffect(() => {
+    if (!podcast.episodes?.length) {
+      return
+    }
+
     const referenceDate = new Date(0)
 
     const parsedEpisodes = podcast.episodes.map((episode) => {
@@ -28,7 +42,7 @@ const useEpisodes = ({ podcast }: { podcast: Podcast }) => {
         name: { value: episode.title, path: `episode/${episode.id}` },
         date: { value: new Date(episode.date).toLocaleDateString() },
         duration: { value: `${minutes}:${fullSeconds}` },
-        id: episode.id,
+        id: { value: episode.id },
       }
     })
 

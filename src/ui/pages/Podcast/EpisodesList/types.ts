@@ -4,6 +4,7 @@ export type Episode = {
   name: TableItemValue
   date: TableItemValue
   duration: TableItemValue
+  id: TableItemValue
 }
 
 export type Props = {
