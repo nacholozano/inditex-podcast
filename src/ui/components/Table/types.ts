@@ -1,6 +1,6 @@
 export type TableItemValue = { value: string } & { path?: string }
 
-export type TableItem = Record<string, TableItemValue>
+export type TableItem = Record<string, TableItemValue> & { id: string }
 
 export type Props = {
   headers: {

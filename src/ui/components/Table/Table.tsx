@@ -10,7 +10,11 @@ const Table: FC<Props> = ({ headers, data }) => {
         <tr>
           {headers.map((header) => {
             return (
-              <th className={styles.headCell} align={header.align}>
+              <th
+                className={styles.headCell}
+                align={header.align}
+                key={header.code}
+              >
                 {header.name}
               </th>
             )
@@ -20,10 +24,14 @@ const Table: FC<Props> = ({ headers, data }) => {
       <tbody>
         {data.map((item) => {
           return (
-            <tr className={styles.row}>
+            <tr className={styles.row} key={item.id}>
               {headers.map((header) => {
                 return (
-                  <td className={styles.bodyCell} align={header.align}>
+                  <td
+                    className={styles.bodyCell}
+                    align={header.align}
+                    key={`${item.id}-${header.code}`}
+                  >
                     {item[header.key].path ? (
                       <Link to={item[header.key].path} className={styles.link}>
                         {item[header.key].value}

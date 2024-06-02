@@ -28,6 +28,7 @@ const useEpisodes = ({ podcast }: { podcast: Podcast }) => {
         name: { value: episode.title, path: `episode/${episode.id}` },
         date: { value: new Date(episode.date).toLocaleDateString() },
         duration: { value: `${minutes}:${fullSeconds}` },
+        id: episode.id,
       }
     })
 
