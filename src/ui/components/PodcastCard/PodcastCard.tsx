@@ -8,7 +8,7 @@ const PodcastCard: FC<Props> = ({ img, alt, title, author, path }) => {
   return (
     <Link to={path} className={styles.link}>
       <Card>
-        <div className={styles.container}>
+        <div className={styles.container} data-testid="podcasts-card-container">
           <div className={styles.imgContainer}>
             <img src={img} className={styles.img} alt={alt} />
           </div>

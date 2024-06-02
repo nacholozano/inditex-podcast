@@ -13,10 +13,11 @@ const Home: FC = () => {
   return (
     <div className={styles.container}>
       <div className={styles.filter}>
-        <span className={styles.counter}>
+        <span className={styles.counter} aria-label="podcast count">
           {loading ? 0 : listedData.length}
         </span>
         <input
+          aria-label="podcast filter"
           className={styles.input}
           placeholder="Filter podcasts..."
           onChange={handleInputChange}

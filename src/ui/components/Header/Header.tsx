@@ -7,7 +7,7 @@ import styles from './styles.module.css'
 const Header: FC<Props> = ({ title, loading, path }) => {
   return (
     <Card>
-      <header className={styles.container}>
+      <header className={styles.container} data-testid="header-container">
         <div>
           <h1 className={styles.title} data-testid="title">
             <Link to={path}>{title}</Link>
