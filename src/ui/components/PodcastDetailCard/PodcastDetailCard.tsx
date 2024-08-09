@@ -4,12 +4,7 @@ import Card from 'ui/components/Card/Card'
 import { Props } from './types'
 import styles from './styles.module.css'
 
-const PodcastDetailCard = ({
-  img,
-  alt,
-  title,
-  author /* , description */,
-}: Props) => {
+const PodcastDetailCard = ({ img, alt, title, author }: Props) => {
   const { podcastId } = useParams()
   const pathTopodcast = `/podcast/${podcastId}`
 
@@ -35,11 +30,6 @@ const PodcastDetailCard = ({
             </Link>
           </div>
         </div>
-        {/* <Separator />
-        <div className={styles.descContainer}>
-          <span className={styles.descTitle}>Description:</span>
-          <p className={styles.desc}>{description}</p>
-        </div> */}
       </div>
     </Card>
   )

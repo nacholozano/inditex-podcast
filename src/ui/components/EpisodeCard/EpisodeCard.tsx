@@ -3,7 +3,7 @@ import Separator from 'ui/components/Separator/Separator'
 import { Props } from './types'
 import styles from './styles.module.css'
 
-const EpisodeCard = ({ title, desc, /* sponsors, */ audio }: Props) => {
+const EpisodeCard = ({ title, desc, audio }: Props) => {
   return (
     <Card>
       <div className={styles.container}>
@@ -14,27 +14,6 @@ const EpisodeCard = ({ title, desc, /* sponsors, */ audio }: Props) => {
             __html: desc,
           }}
         ></p>
-        {/* <div className={styles.sponsors}>
-          This episode is sponsored by{' '}
-          {sponsors.map((item, index) => {
-            let separator = ''
-
-            if (sponsors[index - 1]) {
-              if (index === sponsors.length - 1) {
-                separator = ' and '
-              } else {
-                separator = ', '
-              }
-            }
-
-            return (
-              <span key={item.text}>
-                {separator}
-                <a>{item.text}</a>
-              </span>
-            )
-          })}
-        </div> */}
         <Separator />
         <div className={styles.audioContainer}>
           <audio src={audio} controls className={styles.audio}></audio>
