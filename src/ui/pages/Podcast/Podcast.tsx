@@ -1,11 +1,12 @@
-import { FC } from 'react'
+import { FC, lazy } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import PodcastDetailCard from 'ui/components/PodcastDetailCard/PodcastDetailCard'
 import EpisodesList from './EpisodesList/EpisodesList'
 import usePodcast from './usePodcast'
 import useEpisodes from './useEpisodes'
 import styles from './styles.module.css'
-import EpisodeListen from './EpisodeListen/EpisodeListen'
+
+const EpisodeListen = lazy(() => import('./EpisodeListen/EpisodeListen'))
 
 const Podcast: FC = () => {
   const { podcast } = usePodcast()
@@ -24,7 +25,7 @@ const Podcast: FC = () => {
       </div>
       <div className={styles.content}>
         <Routes>
-          <Route path="episode/:episodeId" element={<EpisodeListen />} />
+          <Route path="episode/:episodeId" Component={EpisodeListen} />
           <Route
             path="/"
             element={
