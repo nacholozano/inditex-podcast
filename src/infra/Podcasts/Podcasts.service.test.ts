@@ -14,10 +14,10 @@ describe('Podcasts service', () => {
   })
 
   test('no cached data', () => {
-    podcastsService = new PodcastsService(httpClient, cacheService)
-
     const cacheReadMock = jest.spyOn(cacheService, 'read')
     cacheReadMock.mockReturnValue(null)
+
+    podcastsService = new PodcastsService(httpClient, cacheService)
 
     expect(podcastsService.getCachedPodcasts()).toBeNull()
   })
