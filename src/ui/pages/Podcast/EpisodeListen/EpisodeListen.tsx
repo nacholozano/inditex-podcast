@@ -10,7 +10,6 @@ const EpisodeListen: FC = () => {
       title={episode.title}
       desc={episode.description}
       audio={episode.audio}
-      sponsors={[]}
     />
   )
 }
