@@ -27,4 +27,28 @@ describe('Podcast Class', () => {
   test('img getter', () => {
     expect(podcast.img).toBe('image.png')
   })
+
+  test('no constructor data', () => {
+    const { id, name, author, img, desc, totalEpisode, episodes } = new Podcast(
+      {}
+    )
+
+    expect({
+      id,
+      name,
+      author,
+      desc,
+      img,
+      totalEpisode,
+      episodes,
+    }).toEqual({
+      id: null,
+      name: '',
+      author: '',
+      desc: '',
+      img: '',
+      totalEpisode: 0,
+      episodes: [],
+    })
+  })
 })

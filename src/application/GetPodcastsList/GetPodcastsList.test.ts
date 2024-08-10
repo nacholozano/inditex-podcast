@@ -1,7 +1,7 @@
 import { CacheService } from 'infra/Cache/Cache.services'
 import { PodcastsService } from 'infra/Podcasts/Podcasts.service'
 import { HttpClient } from 'infra/httpClient'
-import { RawPodcastsListData } from 'infra/Podcasts/types'
+import { PodcastListImgSize, RawPodcastsListData } from 'infra/Podcasts/types'
 import getPodcastsList from './GetPodcastsList'
 
 const mockedData: RawPodcastsListData = {
@@ -19,7 +19,14 @@ const mockedData: RawPodcastsListData = {
         'im:name': {
           label: 'name',
         },
-        'im:image': [],
+        'im:image': [
+          {
+            label: '',
+            attributes: {
+              height: PodcastListImgSize.big,
+            },
+          },
+        ],
       },
     ],
   },

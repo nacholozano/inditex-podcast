@@ -20,7 +20,7 @@ class Podcast {
   private _episodes: Episode[]
 
   constructor({ id, name, author, img, desc, totalEpisode, episodes }: Props) {
-    this._id = id
+    this._id = id || null
     this._name = name || ''
     this._author = author || ''
     this._img = img || ''

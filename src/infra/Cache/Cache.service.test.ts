@@ -7,6 +7,10 @@ describe('Cache service', () => {
     cacheService = new CacheService('key-localStorage')
   })
 
+  afterEach(() => {
+    jest.restoreAllMocks()
+  })
+
   test('no data to read', () => {
     jest.spyOn(Storage.prototype, 'getItem').mockReturnValue(undefined)
 
@@ -29,21 +33,25 @@ describe('Cache service', () => {
     expect(spySetItem).toHaveBeenCalledWith('key-localStorage', '{"b":2}')
   })
 
-  test('expired cache', () => {
-    const savedDate = new Date(2019, 1, 1)
+  test('no expired cache', () => {
+    const savedDate = new Date(2020, 1, 2).getTime()
     const now = new Date(2020, 1, 1)
 
-    jest.spyOn(global, 'Date').mockReturnValue(now)
+    jest.spyOn(global, 'Date').mockReturnValueOnce(now)
 
-    expect(cacheService.hasCacheExpired(savedDate.getTime())).toBe(true)
+    expect(cacheService.hasCacheExpired(savedDate)).toBe(false)
   })
 
-  test('no expired cache', () => {
-    const savedDate = new Date(2020, 1, 2)
+  test('expired cache by time', () => {
+    const savedDate = new Date(2019, 1, 1).getTime()
     const now = new Date(2020, 1, 1)
 
-    jest.spyOn(global, 'Date').mockReturnValue(now)
+    jest.spyOn(global, 'Date').mockReturnValueOnce(now)
 
-    expect(cacheService.hasCacheExpired(savedDate.getTime())).toBe(false)
+    expect(cacheService.hasCacheExpired(savedDate)).toBe(true)
+  })
+
+  test('expired cache by no expire value', () => {
+    expect(cacheService.hasCacheExpired(null)).toBe(true)
   })
 })
