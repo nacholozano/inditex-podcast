@@ -23,7 +23,7 @@ class CacheService {
   }
 
   hasCacheExpired(expires: number) {
-    return !expires || (expires && expires < new Date().getTime())
+    return !expires || expires < new Date().getTime()
   }
 }
 
