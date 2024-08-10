@@ -4,5 +4,10 @@ module.exports = {
   testEnvironment: 'jest-environment-jsdom',
   roots: ['src'],
   moduleDirectories: ['node_modules', '<rootDir>/src'],
-  moduleNameMapper: { '\\.(css)$': '<rootDir>/src/ui/__mocks__/styleMock.js' },
+  moduleNameMapper: {
+    '\\.(css)$': '<rootDir>/src/ui/__mocks__/styleMock.js',
+  },
+  transform: {
+    '\\.(svg)$': '<rootDir>/src/ui/__mocks__/svgMock.js',
+  },
 }
