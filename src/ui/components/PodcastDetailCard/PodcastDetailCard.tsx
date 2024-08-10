@@ -18,12 +18,12 @@ const PodcastDetailCard = ({ img, alt, title, author }: Props) => {
         </div>
         <Separator />
         <div className={styles.infoContainer}>
-          <div className={styles.title}>
+          <div className={styles.title} data-testid="title">
             <Link to={pathTopodcast} className={styles.link}>
               {title}
             </Link>
           </div>
-          <div className={styles.author}>
+          <div className={styles.author} data-testid="author">
             by{' '}
             <Link to={pathTopodcast} className={styles.link}>
               {author}

@@ -7,8 +7,11 @@ const EpisodeCard = ({ title, desc, audio }: Props) => {
   return (
     <Card>
       <div className={styles.container}>
-        <div className={styles.title}>{title}</div>
+        <div className={styles.title} data-testid="title">
+          {title}
+        </div>
         <p
+          data-testid="desc"
           className={styles.desc}
           dangerouslySetInnerHTML={{
             __html: desc,
